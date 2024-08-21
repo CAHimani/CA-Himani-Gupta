@@ -1,0 +1,203 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body {
+   font-family: "Merriweather", serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.profile-header {
+    padding: 20px;
+    position: relative;
+    background-color: white;
+}
+
+.background-img {
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(135deg, #708b67, #5d5d5d, #000); /* Adjusted colors */
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    /* animation: shimmer 2s infinite linear; */
+    background-size: 400% 400%;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+
+.profile-picture {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid white;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 100px;
+    height: 100px;
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+h1 {
+    margin-top: 60px;
+    font-size: 24px;
+    font-weight: bold;
+    
+}
+
+span{
+    font-family: "Jersey 10", sans-serif;
+}
+
+
+p {
+    margin: 5px 0;
+    color: #666;
+
+}
+
+center p {
+    margin: 5px 0;
+    color: #666;
+    width: 95%;
+}
+
+.social-links {
+    margin-top: 20px;
+}
+
+.social-links a {
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.social-links a i.bxl-linkedin-square {
+    color: #0077b5;
+}
+
+.social-links a i.bxl-instagram {
+    color: #E4405F;
+}
+
+.social-links a i.bxl-youtube {
+    color: #FF0000;
+}
+
+.social-links a i.bxl-whatsapp {
+    color: #30D14E;
+}
+
+#dash{
+    color: #ed1c1c25;
+}
+
+.links {
+    padding: 20px;
+    text-align: left;
+}
+
+
+
+.links .link-item {
+    position: relative;
+    background-color: #e7f0fd;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+.links .link-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background-color: #0077b5;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.3s ease;
+}
+
+.links .link-item:hover::before {
+    transform: scaleY(1);
+    transform: scaleX(190);
+    z-index: -1;
+}
+
+.links .link-item:hover {
+    background-color: #d0e4fb;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    a{
+        color: #fff;
+    }
+}
+
+.links .link-item a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    display: block;
+    width: 100%;
+}
+/* Individual colors for each link */
+.links .link-item:nth-child(1)::before {
+    background-color: #4490dc;
+}
+
+.links .link-item:nth-child(2)::before {
+    background-color: #e5d779;
+}
+
+.links .link-item:nth-child(3)::before {
+    background-color: #e05f5f;
+}
+
+footer {
+    background-color: #708b67;
+    padding: 20px;
+    font-size: 14px;
+    border-top: 1px solid #ddd;
+    text-align: center;
+}
+
+footer p {
+    margin: 5px 0;
+    color: #ddd;
+}
