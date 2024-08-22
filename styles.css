@@ -32,22 +32,37 @@ body {
 .background-img {
     width: 100%;
     height: 150px;
-    background: linear-gradient(135deg, #708b67, #5d5d5d, #000); /* Adjusted colors */
+    background-image: url(cover.webp);
+    background-size: cover;
+    background-position: center;
+    position: relative;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-    /* animation: shimmer 2s infinite linear; */
-    background-size: 400% 400%;
+    overflow: hidden;
 }
 
-@keyframes shimmer {
+.background-img::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.1) 100%);
+    animation: shine 2.5s infinite;
+}
+
+@keyframes shine {
     0% {
-        background-position: 0% 50%;
+        left: -150%;
+    }
+    50% {
+        left: 100%;
     }
     100% {
-        background-position: 100% 50%;
+        left: 100%;
     }
 }
-
 
 .profile-picture {
     position: absolute;
@@ -71,18 +86,15 @@ h1 {
     margin-top: 60px;
     font-size: 24px;
     font-weight: bold;
-    
 }
 
-span{
+span {
     font-family: "Jersey 10", sans-serif;
 }
-
 
 p {
     margin: 5px 0;
     color: #666;
-
 }
 
 center p {
@@ -95,7 +107,7 @@ center p {
     margin-top: 20px;
 }
 
-.social-links a {
+social-links a {
     margin: 0 10px;
     text-decoration: none;
     font-size: 24px;
@@ -103,30 +115,35 @@ center p {
 
 .social-links a i.bxl-linkedin-square {
     color: #0077b5;
+    font-size: 30px;
+    transform: translateX(-20px);
 }
 
 .social-links a i.bxl-instagram {
     color: #E4405F;
+    font-size: 30px;
+    transform: translateX(-10px);
 }
 
 .social-links a i.bxl-youtube {
     color: #FF0000;
+    font-size: 30px;
 }
 
 .social-links a i.bxl-whatsapp {
     color: #30D14E;
+    font-size: 30px;
+    transform: translateX(10px);
 }
 
-#dash{
-    color: #ed1c1c25;
+#dash {
+    color: #ed1c1c48;
 }
 
 .links {
     padding: 20px;
     text-align: left;
 }
-
-
 
 .links .link-item {
     position: relative;
@@ -164,7 +181,7 @@ center p {
 .links .link-item:hover {
     background-color: #d0e4fb;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    a{
+    a {
         color: #fff;
     }
 }
@@ -176,6 +193,7 @@ center p {
     display: block;
     width: 100%;
 }
+
 /* Individual colors for each link */
 .links .link-item:nth-child(1)::before {
     background-color: #4490dc;
@@ -189,8 +207,64 @@ center p {
     background-color: #e05f5f;
 }
 
+#git {
+    text-align: left;
+    font-size: 20px;
+    margin-left: 5%;
+    transform: translateY(20px);
+}
+
+.get-in-touch {
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.get-in-touch .email-card {
+    background-color: #94D7C5;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    text-align: left;
+    overflow: hidden;
+}
+
+.get-in-touch .email-card h3 {
+    font-size: 24px;
+    margin: 10px 0;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.get-in-touch .email-card p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #333;
+    font-size: larger;
+    width: 90%;
+}
+
+.get-in-touch .email-card i.bx-envelope-open {
+    font-size: 40px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.get-in-touch .email-card::before {
+    content: '';
+    background-image: url(https://my-landing-page-mocha.vercel.app/images/bg-gradient-2.svg); /* Path to your image file */
+    background-size: 150px;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: -20px;
+    right: 0px;
+    width: 150px;
+    height: 150px;
+    opacity: 1; /* Adjust this value to make the ring structure more or less transparent */
+}
+
 footer {
-    background-color: #708b67;
     padding: 20px;
     font-size: 14px;
     border-top: 1px solid #ddd;
@@ -199,5 +273,5 @@ footer {
 
 footer p {
     margin: 5px 0;
-    color: #ddd;
+    color: #000000;
 }
